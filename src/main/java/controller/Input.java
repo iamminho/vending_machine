@@ -7,6 +7,7 @@ import view.InputView;
 public class Input {
 	static InputView inputView = new InputView();
 	static ExceptionNumber exceptionNumber = new ExceptionNumber();
+	static ExceptionString exceptionString = new ExceptionString();
 	static Scanner sc = new Scanner(System.in);
 
 	private String getInputSumOfCoins() {
@@ -28,8 +29,22 @@ public class Input {
 		}
 	}
 
-	// public int inputBeverage() {
-	//
-	// }
+	private String getInputBeverageInfo() {
+		inputView.BeverageInfoInputMention();
+		return sc.nextLine();
+	}
+
+	public String inputBeverageInfo() {
+		while (true) {
+			try {
+				String inputString = getInputBeverageInfo();
+				exceptionString.isLastSemicolone(inputString);
+				exceptionString.isValidString(inputString);
+				return inputString;
+			} catch (IllegalArgumentException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
 
 }

@@ -16,4 +16,5 @@ public class InputView {
 	public void BuyingInputMention() {
 		System.out.println("구매할 상품명을 입력해 주세요.");
 	}
+
 }

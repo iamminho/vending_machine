@@ -1,18 +1,24 @@
-import controller.Input;
-import controller.VendingMachine;
-import model.SumOfCoins;
-import view.OutputView;
+import controller.ExceptionString;
 
 public class Application {
-	static Input input = new Input();
-	static VendingMachine vm = new VendingMachine();
-	static SumOfCoins sumOfCoins = new SumOfCoins(input.inputSumOfCoins());
-	static OutputView outputView = new OutputView();
 
 	public static void main(String[] args) {
 
-		vm.setCoinsCnt((sumOfCoins.getSumOfCoins()));
-		outputView.printHaveCoins();
+		// String regExp = "\\[[^\\[,\\]]+,\\d+,\\d+\\]$";
+		// String ex = "[포카리,400,32]";
+		// if (ex.matches(regExp))
+		// 	System.out.println("yes");
+		// else
+		// 	System.out.println("no");
+
+		ExceptionString exceptionString = new ExceptionString();
+
+		String str = "[사이다,1500,2];[콜라,01200,3]";
+		try {
+			exceptionString.isValidString(str);
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+		}
 
 	}
 }
