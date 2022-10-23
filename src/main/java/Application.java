@@ -1,12 +1,9 @@
-import controller.VendingMachine;
-import model.Coin;
+import controller.Input;
 
 public class Application {
 	public static void main(String[] args) {
-		VendingMachine vm = new VendingMachine();
-		vm.setCoinsCnt(450);
-		for (Coin coin : Coin.values()) {
-			System.out.println(coin.getAmount() + " " + coin.getCount());
-		}
+		Input input = new Input();
+		int result = input.inputSumOfCoins();
+		System.out.println(result);
 	}
 }

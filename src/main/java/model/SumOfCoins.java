@@ -1,7 +1,7 @@
 package model;
 
 public class SumOfCoins {
-	private int SumOfCoins;
+	private final int SumOfCoins;
 
 	public SumOfCoins(int SumOfCoins) {
 		this.SumOfCoins = SumOfCoins;
