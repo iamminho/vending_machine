@@ -28,4 +28,8 @@ public class Input {
 		}
 	}
 
+	// public int inputBeverage() {
+	//
+	// }
+
 }
