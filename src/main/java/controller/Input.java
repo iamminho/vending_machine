@@ -20,10 +20,12 @@ public class Input {
 				String inputNumber = getInputSumOfCoins();
 				exceptionNumber.isNumber(inputNumber);
 				exceptionNumber.isStartNumZero(inputNumber);
+				exceptionNumber.isTenMultiple(inputNumber);
 				return Integer.parseInt(inputNumber);
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());
 			}
 		}
 	}
+
 }

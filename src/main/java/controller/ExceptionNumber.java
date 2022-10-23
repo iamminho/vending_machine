@@ -20,12 +20,6 @@ public class ExceptionNumber {
 		}
 	}
 
-	public void isBlank(String inputNum) {
-		if (inputNum.length() == 0) {
-			throw new IllegalArgumentException(INVALID_BLANK);
-		}
-	}
-
 	public void isTenMultiple(String inputNum) {
 		int target = Integer.parseInt(inputNum);
 		if (target % 10 != 0) {
