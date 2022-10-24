@@ -3,8 +3,8 @@ package model;
 public class Money {
 	private int money;
 
-	public Money(int inputMoney) {
-		this.money = inputMoney;
+	public Money(int money) {
+		this.money = money;
 	}
 
 	public void setMoney(int payment) {

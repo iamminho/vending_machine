@@ -12,4 +12,9 @@ public class OutputView {
 		}
 		System.out.println("");
 	}
+
+	public void printHaveMoney(int money) {
+		System.out.println("");
+		System.out.println("투입 금액: " + money + "원");
+	}
 }
