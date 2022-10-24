@@ -47,4 +47,8 @@ public class Input {
 		}
 	}
 
+	public void getBeverageInfo() {
+		
+	}
+
 }

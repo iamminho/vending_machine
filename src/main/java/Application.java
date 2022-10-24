@@ -1,6 +1,8 @@
 import controller.ExceptionString;
+import controller.Input;
 
 public class Application {
+	static Input input = new Input();
 
 	public static void main(String[] args) {
 
@@ -13,12 +15,8 @@ public class Application {
 
 		ExceptionString exceptionString = new ExceptionString();
 
-		String str = "[사이다,1500,2];[콜라,01200,3]";
-		try {
-			exceptionString.isValidString(str);
-		} catch (IllegalArgumentException e) {
-			System.out.println(e.getMessage());
-		}
+		String result = input.inputBeverageInfo();
+		System.out.println(result);
 
 	}
 }
