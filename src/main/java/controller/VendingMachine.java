@@ -28,4 +28,5 @@ public class VendingMachine {
 	private void setCoinCnt(Coin coin, int randomNum) {
 		coin.setCount(randomNum);
 	}
+
 }

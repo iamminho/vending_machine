@@ -1,16 +1,17 @@
 package controller;
 
-import model.SumOfCoins;
+import controller.input.InputVendingCoins;
 import view.OutputView;
 
 public class MachineController {
-	static Input input = new Input();
+	static InputVendingCoins inputVendingCoins = new InputVendingCoins();
 	static VendingMachine vm = new VendingMachine();
-	static SumOfCoins sumOfCoins = new SumOfCoins(input.inputSumOfCoins());
 	static OutputView outputView = new OutputView();
 
 	public static void main(String[] args) {
-		vm.setCoinsCnt((sumOfCoins.getSumOfCoins()));
+		int vendingCoins = inputVendingCoins.getVendingCoins();
+		vm.setCoinsCnt(vendingCoins);
 		outputView.printHaveCoins();
+
 	}
 }

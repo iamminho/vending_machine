@@ -1,4 +1,4 @@
-package controller;
+package controller.exception;
 
 public class ExceptionString {
 	private static final String INVALID_SEMICOLNE = "[ERROR] 세미콜론은 상품정보 사이에만 입력이 가능합니다.";
