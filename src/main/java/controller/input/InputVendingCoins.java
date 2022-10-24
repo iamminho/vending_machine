@@ -3,13 +3,12 @@ package controller.input;
 import java.util.Scanner;
 
 import controller.exception.ExceptionNumber;
-import controller.exception.ExceptionString;
 import view.InputView;
 
 public class InputVendingCoins {
 	static InputView inputView = new InputView();
 	static ExceptionNumber exceptionNumber = new ExceptionNumber();
-	static ExceptionString exceptionString = new ExceptionString();
+
 	static Scanner sc = new Scanner(System.in);
 
 	private String inputVendingCoins() {

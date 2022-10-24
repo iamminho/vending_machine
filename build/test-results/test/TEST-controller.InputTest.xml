@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="controller.InputTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-24T03:59:17" hostname="iminhoui-MacBookAir.local" time="0.028">
-  <properties/>
-  <testcase name="getBeverageInfosTest()" classname="controller.InputTest" time="0.028"/>
-  <system-out><![CDATA[{model.Beverage@5542c4ed=20, model.Beverage@1573f9fc=13}
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

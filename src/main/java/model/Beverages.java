@@ -5,8 +5,12 @@ import java.util.Map;
 public class Beverages {
 	private Map<Beverage, Integer> beverages;
 
-	public void add(Beverage beverage, int count) {
-		this.beverages.put(beverage, count);
+	public Beverages(Map<Beverage, Integer> map) {
+		this.beverages = map;
+	}
+
+	public Map<Beverage, Integer> getBeverages() {
+		return this.beverages;
 	}
 
 	// public void sold(String name) {
