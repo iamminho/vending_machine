@@ -17,25 +17,37 @@ public class MachineController {
 
 	static CoinController coinController = new CoinController();
 	static VendingMachine vendingMachine = new VendingMachine();
-	static Change chanege = new Change();
+	static Change change = new Change();
 
-	public static void main(String[] args) {
+	static Beverages beverages;
+	static Money money;
+
+	public static void work() {
+		inputVendingMachineOwnedMoney();
+		inputBeverageInfoProcess();
+		inputMoneyProcess();
+		buyingProcess();
+		returnChangeProcess();
+	}
+
+	static void inputVendingMachineOwnedMoney() {
 		int vendingCoins = inputNumber.getInputNumber(inputView.SUMOFCOINS_INPUT_MENTION);
 		coinController.setCoinsCnt(vendingCoins);
 		outputView.printHaveCoins();
-
-		Beverages beverages = new Beverages(inputBeverage.inputBeverageInfo());
-
-		int inputMoney = inputNumber.getInputNumber(inputView.MONEY_INPUT_MENTION);
-		Money money = new Money(inputMoney);
-		outputView.printHaveMoney(money.getMoney());
-
-		buyingProcess(money, beverages);
-		chanege.setChange(money);
-		outputView.printChange();
 	}
 
-	private static void buyingProcess(Money money, Beverages beverages) {
+	static void inputBeverageInfoProcess() {
+		beverages = new Beverages(inputBeverage.inputBeverageInfo());
+	}
+
+	static void inputMoneyProcess() {
+		System.out.println("");
+		int inputMoney = inputNumber.getInputNumber(inputView.MONEY_INPUT_MENTION);
+		money = new Money(inputMoney);
+		outputView.printHaveMoney(money.getMoney());
+	}
+
+	static void buyingProcess() {
 		while (true) {
 			String inputName;
 
@@ -47,6 +59,11 @@ public class MachineController {
 			vendingMachine.buyingBeverage(inputName, money, beverages);
 			outputView.printHaveMoney(money.getMoney());
 		}
+	}
+
+	static void returnChangeProcess() {
+		change.setChange(money);
+		outputView.printChange();
 	}
 
 }

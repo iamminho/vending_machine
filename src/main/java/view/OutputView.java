@@ -7,11 +7,11 @@ public class OutputView {
 	private static final String VENDINGMACHINE_GIVE_CHANGE = "잔돈";
 
 	public void printHaveCoins() {
+		System.out.println("");
 		System.out.println(VENDINGMACHINE_HAVE_COINS);
 		for (Coin coin : Coin.values()) {
 			System.out.println(coin.getAmount() + "원" + " - " + coin.getCount() + "개");
 		}
-		System.out.println("");
 	}
 
 	public void printHaveMoney(int money) {
