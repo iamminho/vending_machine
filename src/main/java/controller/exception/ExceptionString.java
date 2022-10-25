@@ -4,6 +4,7 @@ public class ExceptionString {
 	private static final String INVALID_SEMICOLNE = "[ERROR] 세미콜론은 상품정보 사이에만 입력이 가능합니다.";
 	private static final String INVALID_FORM = "[ERROR] 입력형식은 [문자, 숫자, 숫자] 입니다.";
 	private static final String INVALID_NUMBER = "[ERROR] 0을 제외하고는 맨 앞자리에 0이 올 수 없습니다.";
+
 	private static ExceptionNumber exceptionNumber = new ExceptionNumber();
 
 	public void isLastSemicolone(String inputGoodsInfos) {
