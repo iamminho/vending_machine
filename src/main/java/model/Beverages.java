@@ -27,9 +27,4 @@ public class Beverages {
 
 		return min;
 	}
-
-	// public void sold(String name) {
-	// 	//beverages.put(beverage, beverages.get(beverage) - 1);
-	// }
-
 }

@@ -14,7 +14,7 @@ public class InputBeverage {
 	static Scanner sc = new Scanner(System.in);
 
 	private String inputBeverage() {
-		inputView.BeverageInfoInputMention();
+		inputView.beverageInfoInputMention();
 		return sc.nextLine();
 	}
 

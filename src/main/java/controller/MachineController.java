@@ -1,8 +1,8 @@
 package controller;
 
 import controller.input.InputBeverage;
-import controller.input.InputBeverageName;
 import controller.input.InputNumber;
+import controller.input.InputOrderBeverage;
 import model.Beverages;
 import model.Money;
 import view.InputView;
@@ -12,12 +12,12 @@ public class MachineController {
 	static InputNumber inputNumber = new InputNumber();
 	static InputView inputView = new InputView();
 	static InputBeverage inputBeverage = new InputBeverage();
-	static InputBeverageName inputBeverageName = new InputBeverageName();
+	static InputOrderBeverage inputOrderBeverage = new InputOrderBeverage();
 	static OutputView outputView = new OutputView();
 
 	static CoinController coinController = new CoinController();
 	static VendingMachine vendingMachine = new VendingMachine();
-	static Change change = new Change();
+	static ChangeController changeController = new ChangeController();
 
 	static Beverages beverages;
 	static Money money;
@@ -31,9 +31,9 @@ public class MachineController {
 	}
 
 	static void inputVendingMachineOwnedMoney() {
-		int vendingCoins = inputNumber.getInputNumber(inputView.SUMOFCOINS_INPUT_MENTION);
-		coinController.setCoinsCnt(vendingCoins);
-		outputView.printHaveCoins();
+		int vendingOwnedCoins = inputNumber.getInputNumber(inputView.SUMOFCOINS_INPUT_MENTION);
+		coinController.setCoinsCnt(vendingOwnedCoins);
+		outputView.printVendingMachineOwnedCoins();
 	}
 
 	static void inputBeverageInfoProcess() {
@@ -44,7 +44,7 @@ public class MachineController {
 		System.out.println("");
 		int inputMoney = inputNumber.getInputNumber(inputView.MONEY_INPUT_MENTION);
 		money = new Money(inputMoney);
-		outputView.printHaveMoney(money.getMoney());
+		outputView.printVendingMachineOwnedMoney(money.getMoney());
 	}
 
 	static void buyingProcess() {
@@ -55,14 +55,14 @@ public class MachineController {
 				break;
 			}
 
-			inputName = inputBeverageName.getInputBeverageName(beverages, money);
+			inputName = inputOrderBeverage.getInputOrderBeverageName(beverages, money);
 			vendingMachine.buyingBeverage(inputName, money, beverages);
-			outputView.printHaveMoney(money.getMoney());
+			outputView.printVendingMachineOwnedMoney(money.getMoney());
 		}
 	}
 
 	static void returnChangeProcess() {
-		change.setChange(money);
+		changeController.setChange(money);
 		outputView.printChange();
 	}
 

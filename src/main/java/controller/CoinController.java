@@ -13,19 +13,19 @@ public class CoinController {
 		}
 	}
 
-	private int getMaxRandomRange(int coinsSum, Coin coin) {
+	int getMaxRandomRange(int coinsSum, Coin coin) {
 		int amount = coin.getAmount();
 		return coinsSum / amount;
 	}
 
-	private int getRandomNum(int maxRandomRange, Coin coin) {
+	int getRandomNum(int maxRandomRange, Coin coin) {
 		if (coin.getAmount() == 10) {
 			return maxRandomRange;
 		}
 		return (int)(Math.random() * (maxRandomRange + 1));
 	}
 
-	private void setCoinCnt(Coin coin, int randomNum) {
+	void setCoinCnt(Coin coin, int randomNum) {
 		coin.setCount(randomNum);
 	}
 }

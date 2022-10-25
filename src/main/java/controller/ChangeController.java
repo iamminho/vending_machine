@@ -3,7 +3,7 @@ package controller;
 import model.Coin;
 import model.Money;
 
-public class Change {
+public class ChangeController {
 
 	public void setChange(Money money) {
 		for (Coin coin : Coin.values()) {
@@ -14,11 +14,11 @@ public class Change {
 		}
 	}
 
-	private int getMaxCnt(Money money, Coin coin) {
+	int getMaxCnt(Money money, Coin coin) {
 		return money.getMoney() / coin.getAmount();
 	}
 
-	private int getCnt(int maxCnt, Coin coin) {
+	int getCnt(int maxCnt, Coin coin) {
 		if (maxCnt <= coin.getCount()) {
 			return maxCnt;
 		}

@@ -6,7 +6,7 @@ import model.Beverage;
 import model.Beverages;
 import model.Money;
 
-public class ExceptionBeverageName {
+public class ExceptionOrderBeverageName {
 	private static final String INVALID_BEVERAGE_NAME = "[ERROR] 자판기에 있는 상품명을 입력해 주세요.";
 	private static final String OVER_PRICE = "[ERROR] 자판기 투입금액보다 상품의 가격이 높습니다. 다른 상품을 선택해주시기 바랍니다.";
 	private static final String SOLD_OUT = "[ERROR] 해당 삼품의 재고가 없습니다. 다른 상품을 선택해주시기 바랍니다.";

@@ -6,7 +6,7 @@ public class OutputView {
 	private static final String VENDINGMACHINE_HAVE_COINS = "자판기가 보유한 동전";
 	private static final String VENDINGMACHINE_GIVE_CHANGE = "잔돈";
 
-	public void printHaveCoins() {
+	public void printVendingMachineOwnedCoins() {
 		System.out.println("");
 		System.out.println(VENDINGMACHINE_HAVE_COINS);
 		for (Coin coin : Coin.values()) {
@@ -14,7 +14,7 @@ public class OutputView {
 		}
 	}
 
-	public void printHaveMoney(int money) {
+	public void printVendingMachineOwnedMoney(int money) {
 		System.out.println("");
 		System.out.println("투입 금액: " + money + "원");
 	}
