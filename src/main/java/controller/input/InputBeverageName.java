@@ -23,6 +23,7 @@ public class InputBeverageName {
 				String input = inputBeverageName();
 				exceptionBeverageName.isNameInBeverages(input, beverages);
 				exceptionBeverageName.canBuyBeverage(input, beverages, money);
+				exceptionBeverageName.isBeverageCntOverOne(input, beverages);
 				return input;
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());

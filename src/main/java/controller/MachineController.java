@@ -11,15 +11,18 @@ import view.OutputView;
 public class MachineController {
 	static InputNumber inputNumber = new InputNumber();
 	static InputView inputView = new InputView();
-	static CoinController coinController = new CoinController();
-	static OutputView outputView = new OutputView();
 	static InputBeverage inputBeverage = new InputBeverage();
 	static InputBeverageName inputBeverageName = new InputBeverageName();
+	static OutputView outputView = new OutputView();
+
+	static CoinController coinController = new CoinController();
+	static VendingMachine vendingMachine = new VendingMachine();
+	static Change chanege = new Change();
 
 	public static void main(String[] args) {
-		// int vendingCoins = inputNumber.getInputNumber(inputView.SUMOFCOINS_INPUT_MENTION);
-		// coinController.setCoinsCnt(vendingCoins);
-		// outputView.printHaveCoins();
+		int vendingCoins = inputNumber.getInputNumber(inputView.SUMOFCOINS_INPUT_MENTION);
+		coinController.setCoinsCnt(vendingCoins);
+		outputView.printHaveCoins();
 
 		Beverages beverages = new Beverages(inputBeverage.inputBeverageInfo());
 
@@ -27,12 +30,23 @@ public class MachineController {
 		Money money = new Money(inputMoney);
 		outputView.printHaveMoney(money.getMoney());
 
-		String inputName = inputBeverageName.getInputBeverageName(beverages, money);
-
-		// while (money.getMoney() < beverages.getMinPrice()) {
-		// 	inputView.BeverageNameInputMention();
-		// 	String inputName = inputBeverageName.getInputBeverageName(beverages);
-		// }
-
+		buyingProcess(money, beverages);
+		chanege.setChange(money);
+		outputView.printChange();
 	}
+
+	private static void buyingProcess(Money money, Beverages beverages) {
+		while (true) {
+			String inputName;
+
+			if (vendingMachine.checkMoney(money, beverages) || vendingMachine.checkCount(beverages)) {
+				break;
+			}
+
+			inputName = inputBeverageName.getInputBeverageName(beverages, money);
+			vendingMachine.buyingBeverage(inputName, money, beverages);
+			outputView.printHaveMoney(money.getMoney());
+		}
+	}
+
 }
