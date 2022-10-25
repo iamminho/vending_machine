@@ -3,13 +3,13 @@ package controller.exception;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ExceptionString {
+public class StringException {
 	private static final String INVALID_LAST_ELEMENT = "[ERROR] 마지막 상품정보 뒤에는 어떠한 특수문자도 붙지 않습니다.";
 	private static final String INVALID_FORM = "[ERROR] 입력형식은 [문자, 숫자, 숫자] 입니다.";
 	private static final String INVALID_NUMBER = "[ERROR] 0을 제외하고는 맨 앞자리에 0이 올 수 없습니다.";
 	private static final String INVALID_SPECIAL_SYMBOL = "[ERROR] 여는 대괄호와 닫는 대괄호 사이에는 세미콜론이 와야합니다.";
 
-	private static ExceptionNumber exceptionNumber = new ExceptionNumber();
+	private static NumberException numberException = new NumberException();
 
 	public void isLastCloseBrackets(String inputGoodsInfos) {
 		if (inputGoodsInfos.charAt(inputGoodsInfos.length() - 1) != ']') {
@@ -49,7 +49,7 @@ public class ExceptionString {
 		String price = goodsInfoArr[1];
 		String count = goodsInfoArr[2];
 
-		exceptionNumber.isTenMultiple(price);
+		numberException.isTenMultiple(price);
 		isStartNumZero(price, count);
 	}
 
@@ -57,7 +57,7 @@ public class ExceptionString {
 		if (price.charAt(0) == '0') {
 			throw new IllegalArgumentException(INVALID_NUMBER);
 		}
-		exceptionNumber.isStartNumZero(count);
+		numberException.isStartNumZero(count);
 	}
 
 }

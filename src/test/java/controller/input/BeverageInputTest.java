@@ -2,7 +2,7 @@ package controller.input;
 
 import org.junit.jupiter.api.Test;
 
-class InputBeverageTest {
+class BeverageInputTest {
 
 	@Test
 	void validInputBeverage() {

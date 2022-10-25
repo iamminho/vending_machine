@@ -2,12 +2,12 @@ package controller.input;
 
 import java.util.Scanner;
 
-import controller.exception.ExceptionNumber;
+import controller.exception.NumberException;
 import view.InputView;
 
-public class InputNumber {
+public class NumberInput {
 	static InputView inputView = new InputView();
-	static ExceptionNumber exceptionNumber = new ExceptionNumber();
+	static NumberException numberException = new NumberException();
 
 	static Scanner sc = new Scanner(System.in);
 
@@ -20,9 +20,9 @@ public class InputNumber {
 		while (true) {
 			try {
 				String input = inputNumber(mention);
-				exceptionNumber.isNumber(input);
-				exceptionNumber.isStartNumZero(input);
-				exceptionNumber.isTenMultiple(input);
+				numberException.isNumber(input);
+				numberException.isStartNumZero(input);
+				numberException.isTenMultiple(input);
 				return Integer.parseInt(input);
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());

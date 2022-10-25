@@ -2,14 +2,14 @@ package controller.input;
 
 import java.util.Scanner;
 
-import controller.exception.ExceptionOrderBeverageName;
+import controller.exception.OrderBeverageException;
 import model.Beverages;
 import model.Money;
 import view.InputView;
 
-public class InputOrderBeverage {
+public class OrderBeverageInput {
 	static InputView inputView = new InputView();
-	static ExceptionOrderBeverageName exceptionOrderBeverageName = new ExceptionOrderBeverageName();
+	static OrderBeverageException orderBeverageNameException = new OrderBeverageException();
 	static Scanner sc = new Scanner(System.in);
 
 	private String inputOrderBeverageName() {
@@ -21,9 +21,9 @@ public class InputOrderBeverage {
 		while (true) {
 			try {
 				String input = inputOrderBeverageName();
-				exceptionOrderBeverageName.isNameInBeverages(input, beverages);
-				exceptionOrderBeverageName.canBuyBeverage(input, beverages, money);
-				exceptionOrderBeverageName.isBeverageCntOverOne(input, beverages);
+				orderBeverageNameException.isNameInBeverages(input, beverages);
+				orderBeverageNameException.canBuyBeverage(input, beverages, money);
+				orderBeverageNameException.isBeverageCntOverOne(input, beverages);
 				return input;
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());

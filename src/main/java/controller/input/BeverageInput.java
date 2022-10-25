@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import controller.exception.ExceptionString;
+import controller.exception.StringException;
 import model.Beverage;
 import view.InputView;
 
-public class InputBeverage {
+public class BeverageInput {
 	static InputView inputView = new InputView();
-	static ExceptionString exceptionString = new ExceptionString();
+	static StringException stringException = new StringException();
 	static Scanner sc = new Scanner(System.in);
 
 	private String inputBeverage() {
@@ -22,9 +22,9 @@ public class InputBeverage {
 		while (true) {
 			try {
 				String inputString = inputBeverage();
-				exceptionString.isLastCloseBrackets(inputString);
-				exceptionString.isBetweenSemiColone(inputString);
-				exceptionString.isValidString(inputString);
+				stringException.isLastCloseBrackets(inputString);
+				stringException.isBetweenSemiColone(inputString);
+				stringException.isValidString(inputString);
 				return inputString;
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());

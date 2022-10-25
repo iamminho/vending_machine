@@ -1,15 +1,15 @@
 package controller;
 
-import controller.exception.ExceptionOrderBeverageName;
+import controller.exception.OrderBeverageException;
 import model.Beverage;
 import model.Beverages;
 import model.Money;
 
 public class VendingMachine {
-	static ExceptionOrderBeverageName exceptionOrderBeverageName = new ExceptionOrderBeverageName();
+	static OrderBeverageException orderBeverageNameException = new OrderBeverageException();
 
 	public void buyingBeverage(String inputName, Money money, Beverages beverages) {
-		int price = exceptionOrderBeverageName.getBeveragePrice(inputName, beverages);
+		int price = orderBeverageNameException.getBeveragePrice(inputName, beverages);
 
 		deductMoney(price, money);
 		deductBeverageCnt(inputName, beverages);
@@ -20,7 +20,7 @@ public class VendingMachine {
 	}
 
 	private void deductBeverageCnt(String inputName, Beverages beverages) {
-		Beverage beverage = exceptionOrderBeverageName.getTargetBeverage(inputName, beverages).get();
+		Beverage beverage = orderBeverageNameException.getTargetBeverage(inputName, beverages).get();
 		int count = beverages.getBeverages().get(beverage) - 1;
 
 		beverages.getBeverages().put(beverage, count);

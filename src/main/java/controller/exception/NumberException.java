@@ -1,6 +1,6 @@
 package controller.exception;
 
-public class ExceptionNumber {
+public class NumberException {
 
 	private static final String VALID_ONLY_NUMBER = "[ERROR] 숫자 입력만 가능합니다.";
 	private static final String INVALID_NUMBER = "[ERROR] 0을 제외하고는 맨 앞자리에 0이 올 수 없습니다.";
