@@ -52,7 +52,6 @@ public class ExceptionBeverageName {
 	public void isBeverageCntOverOne(String inputBeverageName, Beverages beverages) {
 		Beverage beverage = getTargetBeverage(inputBeverageName, beverages).get();
 		int count = beverages.getBeverages().get(beverage);
-		
 		if (count == 0) {
 			throw new IllegalArgumentException(SOLD_OUT);
 		}

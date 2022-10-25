@@ -22,7 +22,8 @@ public class InputBeverage {
 		while (true) {
 			try {
 				String inputString = inputBeverage();
-				exceptionString.isLastSemicolone(inputString);
+				exceptionString.isLastCloseBrackets(inputString);
+				exceptionString.isBetweenSemiColone(inputString);
 				exceptionString.isValidString(inputString);
 				return inputString;
 			} catch (IllegalArgumentException e) {
@@ -48,7 +49,7 @@ public class InputBeverage {
 		int price = Integer.parseInt(beverageInfoArr[1]);
 		int count = Integer.parseInt(beverageInfoArr[2]);
 		Beverage beverage = new Beverage(name, price);
-		
+
 		map.put(beverage, count);
 	}
 
